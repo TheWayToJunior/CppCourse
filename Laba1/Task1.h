@@ -8,43 +8,67 @@ class Task1
 public:
 	void run()
 	{
-		print<float>(processArray(2.5));
+		const int size = 20;
+		int mass[size];
+
+		float* massF = processArray(mass, 2.5);
+
+		print<float>(massF, size);
+
+		delete[] massF;
 	}
 
 private:
 	template<typename T>
-	void print(SharedArray<T> sptr)
+	void print(T* sptr, int size)
 	{
-		for (size_t i = 0; i < sptr.getSize(); i++)
+		for (size_t i = 0; i < size; i++)
 		{
 			std::cout << "mass[" << i << "] = " << sptr[i] << std::endl;
 		}
 	}
 
-	SharedArray<float> processArray(float valueX)
+	float* processArray(int* mass, float valueX)
 	{
-		int arrSize = 20;
+		srand(time(NULL));
 
-		SharedArray<int> arrSptr(arrSize);
+		const int size = 20;
 
-		arrSptr.generateValueArray(-20, 70);
-
-		ItemSharedArray<int> max = arrSptr.getMaxObject();
-
-		print<int>(arrSptr);
-
-		std::cout << "\nmax: " << max.value << " position: " << max.pisition << "\n\n";
-
-		SharedArray<float> arrSptrF(arrSize);
-
-		for (int i = 0; i < arrSptrF.getSize(); i++)
+		for (int i = 0; i < size; i++)
 		{
-			if (max.pisition <= i)
-				arrSptrF[i] = valueX;
-			else
-				arrSptrF[i] = (float)arrSptr[i] / max.value;
+			mass[i] = rand() % 70 + (-20);
 		}
 
-		return arrSptrF;
+		std::cout << std::endl;
+
+		print<int>(mass, size);
+
+		int positionMaxItem = NULL;
+		int maxItem = NULL;
+
+		for (size_t i = 0; i < size; i++)
+		{
+			auto item = abs(mass[i]);
+
+			if (item > maxItem)
+			{
+				maxItem = item;
+				positionMaxItem = i;
+			}
+		}
+
+		std::cout << "\nmax: "<< maxItem << "  position: " << positionMaxItem << "\n\n";
+
+		float* massF = new float[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			if (positionMaxItem <= i)
+				massF[i] = valueX;
+			else
+				massF[i] = (float)mass[i] / maxItem;
+		}
+
+		return massF;
 	}
 };
