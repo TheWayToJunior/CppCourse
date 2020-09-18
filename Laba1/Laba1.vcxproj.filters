@@ -24,12 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ItemSharedArray.h">
-      <Filter>Файлы заголовков\Task1</Filter>
-    </ClInclude>
-    <ClInclude Include="SharedArrayr.h">
-      <Filter>Файлы заголовков\Task1</Filter>
-    </ClInclude>
     <ClInclude Include="Task1.h">
       <Filter>Файлы заголовков\Task1</Filter>
     </ClInclude>

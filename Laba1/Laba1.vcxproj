@@ -155,8 +155,6 @@
     <ClCompile Include="Task3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ItemSharedArray.h" />
-    <ClInclude Include="SharedArrayr.h" />
     <ClInclude Include="Task1.h" />
     <ClInclude Include="Task2.h" />
   </ItemGroup>
