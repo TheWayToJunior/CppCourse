@@ -13,30 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Task1">
-      <UniqueIdentifier>{4d3ed2ce-8b87-44ea-9bd8-f1b1260bafc0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Task2">
-      <UniqueIdentifier>{dee49bdc-177f-4ac8-85ed-49786950335b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Task3">
-      <UniqueIdentifier>{c8255c92-1f58-4455-aa37-dc12b64bbdff}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Task1.h">
-      <Filter>Файлы заголовков\Task1</Filter>
-    </ClInclude>
-    <ClInclude Include="Task2.h">
-      <Filter>Файлы заголовков\Task2</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Task3.h">
-      <Filter>Файлы заголовков\Task3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
