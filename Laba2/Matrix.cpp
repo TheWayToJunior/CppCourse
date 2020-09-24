@@ -1,4 +1,5 @@
 #include "Matrix.h"
+#include <iostream>
 
 template<typename T>
 T** Matrix<T>::createMatrix(int rows, int cells)
@@ -49,15 +50,27 @@ Matrix<T>::~Matrix()
 }
 
 template<typename T>
-int Matrix<T>::getRows()
+int Matrix<T>::getRows() const
 {
 	return this->rows;
 }
 
 template<typename T>
-int Matrix<T>::getCells()
+int Matrix<T>::getCells() const
 {
 	return this->cells;
+}
+
+template<typename T>
+T Matrix<T>::at(int i, int j) const
+{
+	return sourceMatrix[i][j];
+}
+
+template<typename T>
+void Matrix<T>::setAt(int i, int j, T value)
+{
+	sourceMatrix[i][j] = value;
 }
 
 template<typename T>

@@ -8,8 +8,10 @@ public:
 	Matrix(const Matrix<T>& oldMatrix);
 	~Matrix();
 
-	int getRows();
-	int getCells();
+	int getRows() const;
+	int getCells() const;
+	T at(int i, int j) const;
+	void setAt(int i, int j, T value);
 
 	T*& operator[](int i) const;
 
