@@ -1,5 +1,4 @@
 #include "Matrix.h"
-#include <iostream>
 
 template<typename T>
 T** Matrix<T>::createMatrix(int rows, int cells)
