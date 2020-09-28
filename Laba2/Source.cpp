@@ -227,7 +227,7 @@ int main() {
 		int numberOfMonths = 3;
 
 		std::sort(shops.begin(), shops.end(), [numberOfMonths](Shop* s1, Shop* s2) { 
-				return s1->get_sumProfit() / numberOfMonths > s2->get_sumProfit() / numberOfMonths;
+			return s1->get_sumProfit() / numberOfMonths > s2->get_sumProfit() / numberOfMonths;
 		});
 
 		for (auto item : shops)
