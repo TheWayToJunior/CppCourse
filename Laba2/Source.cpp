@@ -163,7 +163,7 @@ int main() {
 		};
 
 		// So beautiful but bad code )))
-		void (*setProp)(Shop * obj, std::string value, int sumProfit) {
+		void (*setProp)(Shop*, std::string, int) {
 			[](Shop* obj, std::string value, int sumProfit) {
 				obj->set_name("Shop №" + value);
 				obj->set_address("Street " + value);
@@ -174,7 +174,7 @@ int main() {
 		};
 
 		// Don't scold for STL
-		double (*summ)(std::map<Month, double>& profit) {
+		double (*summ)(std::map<Month, double>&) {
 			[](std::map<Month, double>& profit) {
 				return profit[Month::September] +
 					   profit[Month::October]   +
@@ -190,8 +190,6 @@ int main() {
 		};
 
 		Shop s1("Shop №1", "Street 1", "1.03.2020", 1, summ(profitShop1));
-
-		auto a = s1.get_name();
 
 		std::map<Month, double> profitShop2 = { 
 			{ Month::September, 3200 },
@@ -211,6 +209,11 @@ int main() {
 		Shop* s3 = new Shop();
 		setProp(s3, "3", summ(profitShop3));
 
+		s2->serialize();
+
+		// this signature is better than deserialization would be called on an instance of the class
+		auto s2_2 = Shop::deserialize();
+
 		std::vector<Shop*> shops = { &s1, s2, s3 };
 
 		std::sort(shops.begin(), shops.end(), [](Shop* s1, Shop* s2) {
@@ -219,7 +222,8 @@ int main() {
 
 		for (auto item : shops)
 		{
-			std::cout << "Name: " << item->get_name() << " Profit: " << item->get_sumProfit() << std::endl;
+			std::cout << "Name: " << item->get_name() 
+				<< " Profit: " << item->get_sumProfit() << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -232,7 +236,8 @@ int main() {
 
 		for (auto item : shops)
 		{
-			std::cout << "Name: " << item->get_name() << " Average profit: " << item->get_sumProfit() / numberOfMonths << std::endl;
+			std::cout << "Name: " << item->get_name()
+				<< " Average profit: " << item->get_sumProfit() / numberOfMonths << std::endl;
 		}
 
 		delete s2;

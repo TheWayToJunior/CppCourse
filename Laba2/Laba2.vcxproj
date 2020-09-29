@@ -143,12 +143,14 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Sterilizer.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Shop.h" />
+    <ClInclude Include="Sterilizer.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

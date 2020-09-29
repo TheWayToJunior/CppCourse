@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "Sterilizer.cpp"
 
 #define PROPERTIES(type, var)  private: type var; \
 	public: type get_##var() const { return var; } \
@@ -22,5 +23,11 @@ public:
 	PROPERTIES(std::string, date);
 	PROPERTIES(int, number);
 	PROPERTIES(int, sumProfit);
+
+	void serialize(const std::string& filename);
+	void serialize();
+
+	static Shop deserialize(const std::string& filename);
+	static Shop deserialize();
 };
 
