@@ -13,8 +13,8 @@ public:
 
 	std::string getPath();
 
-	void sterilize(T& item);
-	T desterilize();
+	void sterilize(T item);
+	T deserialize();
 
 private:
 	std::string path;

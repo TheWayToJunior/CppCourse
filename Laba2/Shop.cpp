@@ -19,7 +19,7 @@ void Shop::serialize()
 Shop Shop::deserialize(const std::string& filename)
 {
 	Sterilizer<Shop> sterilizer(filename);
-	return sterilizer.desterilize();
+	return sterilizer.deserialize();
 }
 
 Shop Shop::deserialize()

@@ -209,10 +209,10 @@ int main() {
 		Shop* s3 = new Shop();
 		setProp(s3, "3", summ(profitShop3));
 
-		s2->serialize();
+		s3->serialize();
 
-		// this signature is better than deserialization would be called on an instance of the class
-		auto s2_2 = Shop::deserialize();
+		// This signature is better than deserialization would be called on an instance of the class
+		//auto s3_1 = Shop::deserialize();
 
 		std::vector<Shop*> shops = { &s1, s2, s3 };
 

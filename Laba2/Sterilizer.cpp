@@ -13,7 +13,7 @@ std::string Sterilizer<T>::getPath()
 }
 
 template<typename T>
-void Sterilizer<T>::sterilize(T& item)
+void Sterilizer<T>::sterilize(T item)
 {
 	std::ofstream fout;
 
@@ -31,7 +31,7 @@ void Sterilizer<T>::sterilize(T& item)
 }
 
 template<typename T>
-T Sterilizer<T>::desterilize()
+T Sterilizer<T>::deserialize()
 {
 	std::ifstream fin;
 	T item;
@@ -39,6 +39,7 @@ T Sterilizer<T>::desterilize()
 	try
 	{
 		fin.open(this->path);
+
 		fin.read((char*)&item, sizeof(T));
 	}
 	catch (const std::exception& ex)
