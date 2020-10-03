@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArraySorter.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Shop.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArraySorter.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Shop.h" />

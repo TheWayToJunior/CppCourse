@@ -49,6 +49,51 @@ Matrix<T>::~Matrix()
 }
 
 template<typename T>
+int Matrix<T>::getFactorial(int value)
+{
+	if (value == 1 || value == 0)
+		return 1;
+
+	return value * getFactorial(value - 1);
+}
+
+template<typename T>
+Matrix<int> Matrix<T>::getMatrix(int sizeRow, int sizeCell)
+{
+	Matrix<int> matrix(sizeRow, sizeCell);
+
+	for (size_t i = 0; i < sizeRow; i++)
+	{
+		for (size_t j = 0; j < sizeCell; j++)
+		{
+			//matrix.setAt(i, j, getFactorial(i + j));
+			matrix[i][j] = getFactorial(i + j);
+		}
+	}
+
+	return matrix;
+}
+
+template<typename T>
+Vector<int> Matrix<T>::convert(int newSize)
+{
+	// TODO : Ñalculate the number of even numbers
+	Vector<int> vector(newSize);
+
+	for (size_t i = 0, k = 0; i < this->getRows(); i++) {
+		for (size_t j = 0; j < this->getCells(); j++) {
+			if ((i + 1) % 2 != 0) {
+				//vector[k] = matrix.at(i, j);
+				vector[k] = sourceMatrix[i][j];
+				k++;
+			}
+		}
+	}
+
+	return vector;
+}
+
+template<typename T>
 int Matrix<T>::getRows() const
 {
 	return this->rows;

@@ -7,43 +7,7 @@
 #include "Matrix.cpp"
 #include "Fraction.h"
 #include "Shop.h"
-
-int getFactorial(int value) {
-	if (value == 1 || value == 0)
-		return 1;
-
-	return value * getFactorial(value - 1);
-}
-
-Matrix<int> getMatrix(int sizeRow, int sizeCell) {
-	Matrix<int> matrix(sizeRow, sizeCell);
-
-	for (size_t i = 0; i < sizeRow; i++) {
-		for (size_t j = 0; j < sizeCell; j++) {
-			//matrix.setAt(i, j, getFactorial(i + j));
-			matrix[i][j] = getFactorial(i + j);
-		}
-	}
-
-	return matrix;
-}
-
-Vector<int> convert(const Matrix<int> matrix, int newSize) {
-	// TODO : Сalculate the number of even numbers
-	Vector<int> vector(newSize);
-
-	for (size_t i = 0, k = 0; i < matrix.getRows(); i++) {
-		for (size_t j = 0; j < matrix.getCells(); j++) {
-			if ((i + 1) % 2 != 0) {
-				//vector[k] = matrix.at(i, j);
-				vector[k] = matrix[i][j];
-				k++;
-			}
-		}
-	}
-
-	return vector;
-}
+#include "ArraySorter.h"
 
 int main() {
 
@@ -69,7 +33,7 @@ int main() {
 	{
 		int row = 5, cell = 5;
 
-		Matrix<int> matrix = getMatrix(row, cell);
+		Matrix<int> matrix = Matrix<int>::getMatrix(row, cell);
 
 		for (size_t i = 0; i < row; i++) {
 			for (size_t j = 0; j < cell; j++) {
@@ -79,7 +43,7 @@ int main() {
 			std::cout << std::endl;
 		}
 
-		Vector<int> vector = convert(matrix, 15);
+		Vector<int> vector = matrix.convert(15);
 
 		std::cout << std::endl;
 
@@ -216,10 +180,11 @@ int main() {
 
 		std::vector<Shop*> shops = { &s1, s2, s3 };
 
-		std::sort(shops.begin(), shops.end(), [](Shop* s1, Shop* s2) {
-			return s1->get_sumProfit() > s2->get_sumProfit(); 
+		ArraySorter::bubbleSorting<Shop*>(shops, [](Shop* s1, Shop* s2) {
+			return s1->get_sumProfit() < s2->get_sumProfit();
 		});
 
+		
 		for (auto item : shops)
 		{
 			std::cout << "Name: " << item->get_name() 
@@ -230,8 +195,8 @@ int main() {
 
 		int numberOfMonths = 3;
 
-		std::sort(shops.begin(), shops.end(), [numberOfMonths](Shop* s1, Shop* s2) { 
-			return s1->get_sumProfit() / numberOfMonths > s2->get_sumProfit() / numberOfMonths;
+		ArraySorter::bubbleSorting<Shop*>(shops, [numberOfMonths](Shop* s1, Shop* s2) {
+			return s1->get_sumProfit() / numberOfMonths < s2->get_sumProfit() / numberOfMonths;
 		});
 
 		for (auto item : shops)
