@@ -5,11 +5,11 @@
 #include <fstream>
 
 template<typename T>
-class Sterilizer
+class Serializer
 {
 public:
-	Sterilizer() = default;
-	Sterilizer(std::string path);
+	Serializer() = default;
+	Serializer(std::string path);
 
 	std::string getPath();
 

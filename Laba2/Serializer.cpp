@@ -1,19 +1,19 @@
-#include "Sterilizer.h"
+#include "Serializer.h"
 
 template<typename T>
-Sterilizer<T>::Sterilizer(std::string path)
+Serializer<T>::Serializer(std::string path)
 	: path(path)
 {
 }
 
 template<typename T>
-std::string Sterilizer<T>::getPath()
+std::string Serializer<T>::getPath()
 {
 	return this->path;
 }
 
 template<typename T>
-void Sterilizer<T>::sterilize(T item)
+void Serializer<T>::sterilize(T item)
 {
 	std::ofstream fout;
 
@@ -31,7 +31,7 @@ void Sterilizer<T>::sterilize(T item)
 }
 
 template<typename T>
-T Sterilizer<T>::deserialize()
+T Serializer<T>::deserialize()
 {
 	std::ifstream fin;
 	T item;

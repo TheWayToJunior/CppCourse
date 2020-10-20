@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "Sterilizer.cpp"
+#include "Serializer.cpp"
 
 #define PROPERTIES(type, var)  private: type var; \
 	public: type get_##var() const { return var; } \

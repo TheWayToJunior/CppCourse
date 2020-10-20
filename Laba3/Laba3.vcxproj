@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{fcea1f62-b3e0-4cdb-9777-17638032a307}</ProjectGuid>
-    <RootNamespace>Laba2</RootNamespace>
+    <ProjectGuid>{d0576616-608f-4070-9b05-410b090e8f60}</ProjectGuid>
+    <RootNamespace>Laba3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,21 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArraySorter.cpp" />
-    <ClCompile Include="Fraction.cpp" />
-    <ClCompile Include="Matrix.cpp" />
-    <ClCompile Include="Serializer.cpp" />
-    <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="Divisor.cpp" />
+    <ClCompile Include="ExpressionEvaluator.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Summator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArraySorter.h" />
-    <ClInclude Include="Fraction.h" />
-    <ClInclude Include="Matrix.h" />
-    <ClInclude Include="Serializer.h" />
-    <ClInclude Include="Shop.h" />
-    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Divisor.h" />
+    <ClInclude Include="ExpressionEvaluator.h" />
+    <ClInclude Include="ILoggable.h" />
+    <ClInclude Include="Summator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

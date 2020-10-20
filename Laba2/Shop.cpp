@@ -7,7 +7,7 @@ Shop::Shop(std::string name, std::string address, std::string date, int number, 
 
 void Shop::serialize(const std::string& filename)
 {
-	Sterilizer<Shop> sterilizer(filename);
+	Serializer<Shop> sterilizer(filename);
 	sterilizer.sterilize(*this);
 }
 
@@ -18,7 +18,7 @@ void Shop::serialize()
 
 Shop Shop::deserialize(const std::string& filename)
 {
-	Sterilizer<Shop> sterilizer(filename);
+	Serializer<Shop> sterilizer(filename);
 	return sterilizer.deserialize();
 }
 
