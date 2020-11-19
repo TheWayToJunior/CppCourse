@@ -17,10 +17,8 @@ void Divisor::logToScreen()
 
 void Divisor::logToFile(const std::string& fileName)
 {
-    std::string str = this->joinOperands(" / ");
-
     std::ofstream ofs(fileName, std::ofstream::out | std::ofstream::app);
-    ofs << str + " = " + std::to_string(this->calculate()) + "\n";
+    ofs << this->joinOperands(" / ") + " = " + std::to_string(this->calculate()) + "\n";
     ofs.close();
 }
 

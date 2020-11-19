@@ -13,32 +13,74 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Task1">
+      <UniqueIdentifier>{6c5e4317-bce9-4374-a86b-65ed13ee2b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Task1">
+      <UniqueIdentifier>{65d9bc24-5162-4376-8e98-b1304ce0e600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Task2">
+      <UniqueIdentifier>{377ba857-9a9d-4b90-b54a-e8968924014c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Task2">
+      <UniqueIdentifier>{6a52419e-f9c3-47e0-9ec3-39225ddff3b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="ExpressionEvaluator.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Summator.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Task1</Filter>
     </ClCompile>
     <ClCompile Include="Divisor.cpp">
+      <Filter>Исходные файлы\Task1</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomEE.cpp">
+      <Filter>Исходные файлы\Task1</Filter>
+    </ClCompile>
+    <ClCompile Include="Summator.cpp">
+      <Filter>Исходные файлы\Task1</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Исходные файлы\Task2</Filter>
+    </ClCompile>
+    <ClCompile Include="Drugstore.cpp">
+      <Filter>Исходные файлы\Task2</Filter>
+    </ClCompile>
+    <ClCompile Include="Boutique.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ILoggable.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ExpressionEvaluator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Summator.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CustomEE.h">
+      <Filter>Файлы заголовков\Task1</Filter>
     </ClInclude>
     <ClInclude Include="Divisor.h">
+      <Filter>Файлы заголовков\Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionEvaluator.h">
+      <Filter>Файлы заголовков\Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="ILoggable.h">
+      <Filter>Файлы заголовков\Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="IShuffle.h">
+      <Filter>Файлы заголовков\Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="Summator.h">
+      <Filter>Файлы заголовков\Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>Файлы заголовков\Task2</Filter>
+    </ClInclude>
+    <ClInclude Include="ITaxPayments.h">
+      <Filter>Файлы заголовков\Task2</Filter>
+    </ClInclude>
+    <ClInclude Include="Drugstore.h">
+      <Filter>Файлы заголовков\Task2</Filter>
+    </ClInclude>
+    <ClInclude Include="Boutique.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

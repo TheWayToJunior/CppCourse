@@ -12,10 +12,10 @@ public:
 	ExpressionEvaluator(size_t n);
 	virtual ~ExpressionEvaluator();
 
-	void virtual logToScreen() override;
-	void virtual logToFile(const std::string& fileName) override;
+	void logToScreen() override;
+	void logToFile(const std::string& fileName) override;
 
-	double virtual calculate() = 0;
+	virtual double calculate() = 0;
 
 	void setOperand(int pos, double value);
 	void setOperands(double ops[], size_t n);

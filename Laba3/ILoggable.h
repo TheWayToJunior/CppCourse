@@ -6,6 +6,6 @@ class ILoggable
 public:
 	virtual ~ILoggable() {};
 
-	virtual void logToScreen() = 0;
-	virtual void logToFile(const std::string& fileName) = 0;
+	void virtual logToScreen() = 0;
+	void virtual logToFile(const std::string& fileName) = 0;
 };
