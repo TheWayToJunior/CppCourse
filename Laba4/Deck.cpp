@@ -19,7 +19,14 @@ int Deck::GetCount()
 void Deck::ClearСards()
 {
 	if (!cards.empty())
-		cards.erase(cards.begin(), cards.end());
+	{
+		for (auto card : cards)
+		{
+			delete card;
+		}
+
+		cards.clear();
+	}
 }
 
 void Deck::Shuffle()

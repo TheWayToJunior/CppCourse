@@ -12,8 +12,15 @@ void Hand::AddCard(Card* card)
 
 void Hand::Clear—ards()
 {
-	if(!cards.empty())
-		cards.erase(cards.begin(), cards.end());
+	if (!cards.empty())
+	{
+		for (auto card : cards)
+		{
+			delete card;
+		}
+
+		cards.clear();
+	}
 }
 
 const std::vector<Card*>& Hand::GetCards()
