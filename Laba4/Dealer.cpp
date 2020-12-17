@@ -6,9 +6,9 @@ void Dealer::Move(Deck* deck)
 
 	for (size_t i = 0; i < count; i++)
 	{
-		if (this->GetTotal() > 21)
+		if (this->GetHand()->GetTotal() > 21)
 			break;
 
-		this->AddCard(deck->GetCard());
+		this->GetHand()->AddCard(deck->GetCard());
 	}
 }

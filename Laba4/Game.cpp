@@ -28,7 +28,7 @@ void Game::Play(const float& bet)
 
 	do
 	{
-		player->AddCard(deck->GetCard());
+		player->GetHand()->AddCard(deck->GetCard());
 		PrettyPrint(format);
 
 		std::cout << "œÓ‰ÓÎÊËÚ¸? "; std::cin >> command; std::cout << std::endl;
@@ -38,7 +38,7 @@ void Game::Play(const float& bet)
 	dealer->Move(deck);
 	PrettyPrint(format);
 
-	bool playerIsWinner = this->IsWinner(this->player, this->dealer);
+	bool playerIsWinner = this->IsWinner(this->player->GetHand(), this->dealer->GetHand());
 
 	if (playerIsWinner)
 	{
@@ -54,15 +54,15 @@ void Game::Play(const float& bet)
 	std::cout << "¡‡Î‡ÌÒ: " << player->GetBalance() << std::endl << std::endl;
 }
 
-bool Game::IsWinner(const Hand* player, const Hand* dealer)
+bool Game::IsWinner(const Hand* playerHand, const Hand* dealerHand)
 {
-	if (this->ExcessScore(player))
+	if (this->ExcessScore(playerHand))
 		return false;
 
-	if (this->ExcessScore(dealer))
+	if (this->ExcessScore(dealerHand))
 		return true;
 
-	return player->GetTotal() > dealer->GetTotal();
+	return playerHand->GetTotal() > dealerHand->GetTotal();
 }
 
 bool Game::ExcessScore(const Hand* hand)
@@ -72,8 +72,8 @@ bool Game::ExcessScore(const Hand* hand)
 
 void Game::Dispose()
 {
-	this->player->Clear—ards();
-	this->dealer->Clear—ards();
+	this->player->GetHand()->Clear—ards();
+	this->dealer->GetHand()->Clear—ards();
 
 	this->deck->Clear—ards();
 }
@@ -81,6 +81,6 @@ void Game::Dispose()
 void Game::PrettyPrint(IFormattable& formattable)
 {
 	std::cout << " ÓÎÓ‰‡: "  << "[" << deck->GetCount()                << "]" << std::endl;
-	std::cout << "ƒËÎÎÂ:  " << formattable.Format(dealer->GetCards()) << " : " << dealer->GetTotal() << std::endl;
-	std::cout << "¬˚:      " << formattable.Format(player->GetCards()) << " : " << player->GetTotal() << std::endl;
+	std::cout << "ƒËÎÎÂ:  " << formattable.Format(dealer->GetHand()->GetCards()) << " : " << dealer->GetHand()->GetTotal() << std::endl;
+	std::cout << "¬˚:      " << formattable.Format(player->GetHand()->GetCards()) << " : " << player->GetHand()->GetTotal() << std::endl;
 }

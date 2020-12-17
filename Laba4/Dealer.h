@@ -1,8 +1,8 @@
 #pragma once
-#include "Hand.h"
+#include "PlayerBase.h"
 #include "Deck.h"
 
-class Dealer : public Hand
+class Dealer : public PlayerBase
 {
 public:
 	/// <summary>

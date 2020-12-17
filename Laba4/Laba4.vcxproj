@@ -157,6 +157,7 @@
     <ClInclude Include="Hand.h" />
     <ClInclude Include="IFormattable.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
