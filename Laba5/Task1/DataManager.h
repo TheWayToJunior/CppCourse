@@ -33,9 +33,9 @@ public:
 	{
 		data.push_back(temp);
 
-		if (scan(data[data.size()]))
+		if (scan(data[data.size() - 1]))
 		{
-			data[data.size()] = '_';
+			data[data.size() - 1] = '_';
 		}
 	}
 
