@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <locale>
 
 Game::Game(Player* player)
 {
@@ -81,6 +82,12 @@ void Game::Dispose()
 void Game::PrettyPrint(IFormattable& formattable)
 {
 	std::cout << "Колода: "  << "[" << deck->GetCount()                << "]" << std::endl;
-	std::cout << "Диллер:  " << formattable.Format(dealer->GetHand()->GetCards()) << " : " << dealer->GetHand()->GetTotal() << std::endl;
+
+	std::string str = formattable.Format(dealer->GetHand()->GetCards());
+	std::wstring wstr(str.begin(), str.end());
+	
+	std::cout << "Диллер:  ";
+	std::wcout << wstr << " : " << dealer->GetHand()->GetTotal() << std::endl;
+
 	std::cout << "Вы:      " << formattable.Format(player->GetHand()->GetCards()) << " : " << player->GetHand()->GetTotal() << std::endl;
 }
